@@ -37,7 +37,10 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'core',
+
+    'django_bootstrap5',
+
+    'core.apps.CoreConfig',
 ]
 
 MIDDLEWARE = [
@@ -52,10 +55,12 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = 'tishka_fm.urls'
 
+TEMPLATES_DIR = BASE_DIR / 'templates'
+
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [TEMPLATES_DIR],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
